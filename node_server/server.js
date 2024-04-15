@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 
 const PORT = 3000;
-const HOST = '0.0.0.0';
 
 const app = express();
 const server = require("http").createServer(app);
@@ -21,5 +20,9 @@ app.use("/", (req, res) => {
 });
 
 io.on('connection', socket => {
-  console.log('Socket Conectado');
+  console.log(`Socket Conectado ${socket.id}`);
+
+  socket.on('sendMessage', data => {
+    console.log(data);
+  });
 });

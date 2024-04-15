@@ -1,2 +1,1 @@
-# SocketLog
-NodeJs Socket Server with Python Clients, Docker Server
+docker-compose up - para rodar o servidor
